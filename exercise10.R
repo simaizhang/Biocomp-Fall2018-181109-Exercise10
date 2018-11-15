@@ -1,3 +1,6 @@
+# Simai Zhang
+# Exercise 10
+
 # 1
 setwd("~/bio/exercise/Biocomp-Fall2018-181109-Exercise10/")
 data=read.table('data.txt',header=TRUE,sep=',')
@@ -37,8 +40,9 @@ pValue=1-pchisq(teststat,df=df)
 if (pValue<0.05)
  { print("quadratic model is better") }
 if (pValue>0.05)
- { print("No need to use quadratic model, linear model is better")}
+ { print("No need to use quadratic model, linear model is better") }
 
+----------------------------------------------------------------------
 
 # 2
 ddSim<-function(t,y,p){
@@ -66,6 +70,7 @@ ddSim<-function(t,y,p){
   # 3rd model simulation 
   params3=c(0.5,0.5,0.009,0.008,0.003,0.002)
   modelSim=ode(y=y0,times=times,func=ddSim,parms=params3)
+ 
   # the appropriate model simulation
   params4=c(0.5,0.5,0.01,0.007,0.008,0.01)
   modelSim=ode(y=y0,times=times,func=ddSim,parms=params4)
